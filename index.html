@@ -7,63 +7,108 @@
 </head>
 <body style="margin:0;font-family:Poppins,Arial,sans-serif;background-color:#f9fafc;color:#333;">
 
+
+
 <!-- HEADER -->
-<header style="background:linear-gradient(90deg,#0b63cf,#2fa4ff);color:white;padding:15px 25px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+<header style="background:linear-gradient(90deg,#0b63cf,#2fa4ff);color:white;padding:15px 25px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
   <div style="display:flex;align-items:center;">
-    <img src="image/nn_2.jpg" alt="NN Softwave Logo" style="height:50px;margin-right:10px;">
-    <h2 style="margin:0;">NN Softwave Technology</h2>
+    <img src="image/nn_2.jpg" alt="NN Softwave Logo" style="height:45px;margin-right:10px;border-radius:5px;">
+    <h2 style="margin:0;font-size:1.2em;">NN Softwave Technology </h2>
   </div>
-  <nav style="display:flex;flex-wrap:wrap;justify-content:center;">
+
+  <!-- Toggle Menu Button -->
+  <div id="menu-btn" style="font-size:28px;cursor:pointer;display:none;" onclick="toggleMenu()">☰</div>
+
+  <!-- Navigation -->
+  <nav id="nav-links" style="display:flex;flex-wrap:wrap;justify-content:center;">
     <a href="#" style="color:white;margin:0 10px;text-decoration:none;font-weight:600;">Home</a>
-    <a href="#" style="color:white;margin:0 10px;text-decoration:none;font-weight:600;">About</a>
-    <a href="#" style="color:white;margin:0 10px;text-decoration:none;font-weight:600;">Services</a>
-    
-    <a href="#" style="color:white;margin:0 10px;text-decoration:none;font-weight:600;">Contact</a>
+    <a href="#portfolio" style="color:white;margin:0 10px;text-decoration:none;font-weight:600;">About</a>
+    <a href="#services" style="color:white;margin:0 10px;text-decoration:none;font-weight:600;">Services</a>
+    <a href="#contact" style="color:white;margin:0 10px;text-decoration:none;font-weight:600;">Contact</a>
   </nav>
 </header>
 
+
 <!-- HERO -->
-<section id="hero" style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;text-align:center;padding:70px 20px;background-color:#ffffff;">
+<section id="hero" style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;text-align:center;padding:60px 20px;background:linear-gradient(135deg,#ffffff,#eef6ff);">
   <div style="max-width:600px;margin:20px;">
-    <h1 style="color:#0b63cf;font-size:2.5em;margin-bottom:15px;">Smart Software Solutions for a Digital Future</h1>
-    <p style="font-size:1.1em;margin-bottom:25px;">We craft innovative web, mobile and automation products to help your business grow faster and smarter.</p>
-    <button style="background-color:#0b63cf;color:white;border:none;padding:12px 25px;margin:5px;border-radius:30px;font-size:1em;cursor:pointer;box-shadow:0 3px 8px rgba(11,99,207,0.4);" 
-      onmouseover="this.style.backgroundColor='#0949a1'" 
-      onmouseout="this.style.backgroundColor='#0b63cf'">Request a Demo</button>
-    <button style="background-color:#2fa4ff;color:white;border:none;padding:12px 25px;margin:5px;border-radius:30px;font-size:1em;cursor:pointer;box-shadow:0 3px 8px rgba(47,164,255,0.4);" 
-      onmouseover="this.style.backgroundColor='#1c89d2'" 
-      onmouseout="this.style.backgroundColor='#2fa4ff'">Explore Services</button>
+    <h1 style="color:#0b63cf;font-size:2.3em;margin-bottom:15px;">Smart Software Solutions for a Digital Future</h1>
+    <p style="font-size:1.1em;margin-bottom:25px;line-height:1.6;">We craft innovative web, mobile and automation products to help your business grow faster and smarter.</p>
+    <div>
+      <button style="background-color:#0b63cf;color:white;border:none;padding:12px 25px;margin:5px;border-radius:30px;font-size:1em;cursor:pointer;box-shadow:0 3px 8px rgba(11,99,207,0.4);" 
+        onmouseover="this.style.backgroundColor='#0949a1'" 
+        onmouseout="this.style.backgroundColor='#0b63cf'">Request a Demo</button>
+      <button style="background-color:#2fa4ff;color:white;border:none;padding:12px 25px;margin:5px;border-radius:30px;font-size:1em;cursor:pointer;box-shadow:0 3px 8px rgba(47,164,255,0.4);" 
+        onmouseover="this.style.backgroundColor='#1c89d2'" 
+        onmouseout="this.style.backgroundColor='#2fa4ff'">Explore Services</button>
+    </div>
   </div>
   <div style="margin:20px;">
-    <img src="image/nn1.png" alt="Hero" style="max-width:350px;border-radius:900px;box-shadow:0 3px 10px rgba(0,0,0,0.15);">
+    <img src="image/nn1.png" alt="Hero" style="max-width:400px;width:90%;border-radius:15px;box-shadow:0 3px 10px rgba(0,0,0,0.15);">
   </div>
 </section>
 
 <!-- SERVICES -->
-<section style="background-color:#f0f4f8;padding:60px 20px;text-align:center;">
-  <h2 style="color:#0b63cf;margin-bottom:40px;">Our Services</h2>
-  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:25px;">
-    <div style="background-color:white;padding:25px;border-radius:10px;flex:1 1 220px;max-width:260px;box-shadow:0 3px 10px rgba(0,0,0,0.1);">
-      <h3 style="color:#0b63cf;">Web Development</h3>
-      <p>Beautiful, responsive, SEO-friendly websites and web apps.</p>
+<section id="services" style="background-color:#f0f4f8;padding:60px 20px;text-align:center;">
+  <h2 style="color:#0b63cf;margin-bottom:40px;font-size:2em;">Our Services</h2>
+  
+  <div id="service-container" style="display:flex;flex-wrap:wrap;justify-content:center;gap:25px;">
+
+    <!-- 1: Web Development -->
+    <div style="background-color:white;padding:25px 20px;border-radius:15px;flex:1 1 240px;max-width:270px;
+                box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s;text-align:center;"
+         onmouseover="this.style.transform='translateY(-8px)';this.style.boxShadow='0 6px 15px rgba(11,99,207,0.3)'"
+         onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+      <img src="image/web development.jpg" alt="Web Development" 
+           style="width:90px;height:90px;object-fit:cover;border-radius:50%;margin-bottom:15px;
+           box-shadow:0 3px 8px rgba(0,0,0,0.2);">
+      <h3 style="color:#0b63cf;font-size:1.2em;margin:10px 0;">Web Development</h3>
+      <p style="font-size:0.95em;color:#555;line-height:1.5;">Beautiful, responsive, SEO-friendly websites and web apps that engage your users effectively.</p>
     </div>
-    <div style="background-color:white;padding:25px;border-radius:10px;flex:1 1 220px;max-width:260px;box-shadow:0 3px 10px rgba(0,0,0,0.1);">
-      <h3 style="color:#0b63cf;">Mobile Apps</h3>
-      <p>High-performance Android & iOS applications.</p>
+
+    <!-- 2: Mobile Apps -->
+    <div style="background-color:white;padding:25px 20px;border-radius:15px;flex:1 1 240px;max-width:270px;
+                box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s;text-align:center;"
+         onmouseover="this.style.transform='translateY(-8px)';this.style.boxShadow='0 6px 15px rgba(11,99,207,0.3)'"
+         onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+      <img src="image/mobile app.jpg" alt="Mobile App" 
+           style="width:90px;height:90px;object-fit:cover;border-radius:50%;margin-bottom:15px;
+           box-shadow:0 3px 8px rgba(0,0,0,0.2);">
+      <h3 style="color:#0b63cf;font-size:1.2em;margin:10px 0;">Mobile Apps</h3>
+      <p style="font-size:0.95em;color:#555;line-height:1.5;">Custom Android & iOS apps built for performance, speed, and seamless user experience.</p>
     </div>
-    <div style="background-color:white;padding:25px;border-radius:10px;flex:1 1 220px;max-width:260px;box-shadow:0 3px 10px rgba(0,0,0,0.1);">
-      <h3 style="color:#0b63cf;">Automation</h3>
-      <p>IoT, AI & workflow automation for smarter operations.</p>
+
+    <!-- 3: Automation -->
+    <div style="background-color:white;padding:25px 20px;border-radius:15px;flex:1 1 240px;max-width:270px;
+                box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s;text-align:center;"
+         onmouseover="this.style.transform='translateY(-8px)';this.style.boxShadow='0 6px 15px rgba(11,99,207,0.3)'"
+         onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+      <img src="image/automation.jpeg" alt="Automation" 
+           style="width:90px;height:90px;object-fit:cover;border-radius:50%;margin-bottom:15px;
+           box-shadow:0 3px 8px rgba(0,0,0,0.2);">
+      <h3 style="color:#0b63cf;font-size:1.2em;margin:10px 0;">Automation</h3>
+      <p style="font-size:0.95em;color:#555;line-height:1.5;">IoT, AI & process automation that saves time, increases efficiency, and reduces cost.</p>
     </div>
-    <div style="background-color:white;padding:25px;border-radius:10px;flex:1 1 220px;max-width:260px;box-shadow:0 3px 10px rgba(0,0,0,0.1);">
-      <h3 style="color:#0b63cf;">Consulting</h3>
-      <p>Expert IT strategy and digital transformation guidance.</p>
+
+    <!-- 4: Consulting -->
+    <div style="background-color:white;padding:25px 20px;border-radius:15px;flex:1 1 240px;max-width:270px;
+                box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s;text-align:center;"
+         onmouseover="this.style.transform='translateY(-8px)';this.style.boxShadow='0 6px 15px rgba(11,99,207,0.3)'"
+         onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+      <img src="image/consulting.png" alt="Consulting" 
+           style="width:90px;height:90px;object-fit:cover;border-radius:50%;margin-bottom:15px;
+           box-shadow:0 3px 8px rgba(0,0,0,0.2);">
+      <h3 style="color:#0b63cf;font-size:1.2em;margin:10px 0;">Consulting</h3>
+      <p style="font-size:0.95em;color:#555;line-height:1.5;">Strategic IT consulting to empower your business with innovation and digital transformation.</p>
     </div>
+
   </div>
 </section>
 
+
+
 <!-- CONTACT -->
-<section style="padding:60px 20px;background-color:#ffffff;text-align:center;">
+<section id="contact" style="padding:60px 20px;background-color:#ffffff;text-align:center;">
   <h2 style="color:#0b63cf;margin-bottom:10px;">Contact Us</h2>
   <p>📍 Greater Noida, Uttar Pradesh</p>
   <p>📧 nnsoftwave@gmail.com</p>
@@ -81,22 +126,90 @@
   </form>
 </section>
 
+
 <!-- FOOTER -->
-<footer style="background-color:#0b63cf;color:white;text-align:center;padding:15px;">
-  <p>© 2025 NN Softwave Technology | All Rights Reserved</p>
+<footer style="background:linear-gradient(90deg,#0b63cf,#2fa4ff);color:white;padding:50px 20px 20px;font-family:Poppins,Arial,sans-serif;">
+
+  <!-- TOP SECTION -->
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-around;align-items:flex-start;gap:30px;max-width:1200px;margin:auto;">
+
+    <!-- COMPANY INFO -->
+    <div style="flex:1 1 250px;min-width:220px;">
+      <h3 style="margin-bottom:10px;color:#fff;font-weight:700;">NN Softwave Technology</h3>
+      <p style="margin:0;line-height:1.6;">Innovative automation and software solutions that help businesses grow smarter and faster in the digital era.</p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div style="flex:1 1 200px;min-width:180px;">
+      <h4 style="margin-bottom:10px;font-weight:600;color:#fff;">Quick Links</h4>
+      <ul style="list-style:none;padding:0;margin:0;line-height:1.8;">
+        <li><a href="#" style="color:white;text-decoration:none;"> Home</a></li>
+        <li><a href="#" style="color:white;text-decoration:none;"> About Us</a></li>
+        <li><a href="#" style="color:white;text-decoration:none;"> Services</a></li>
+        <li><a href="#" style="color:white;text-decoration:none;"> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL & CONTACT -->
+    <div style="flex:1 1 300px;min-width:220px;">
+      <h4 style="margin-bottom:10px;font-weight:600;color:#fff;">Follow Us</h4>
+      <div style="margin-bottom:10px;">
+        <a href="#"><img src="image/yt.jpg" height="35" style="margin-right:8px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.2);"></a>
+        <a href="#"><img src="image/in.jpg" height="35" style="margin-right:8px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.2);"></a>
+        <a href="#"><img src="image/fa.jpg" height="35" style="margin-right:8px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.2);"></a>
+        <a href="#"><img src="image/link.jpg" height="35" style="margin-right:8px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.2);"></a>
+      </div>
+      <p style="margin:5px 0;">📧 <a href="mailto:nnsoftwave@gmail.com" style="color:white;text-decoration:none;">nnsoftwave@gmail.com</a></p>
+      <p style="margin:5px 0;">📞 
+        <a href="tel:+917654xxxxxx" style="color:white;text-decoration:none;">+91 7654xxxxxx</a> | 
+        <a href="tel:+917700xxxxxx" style="color:white;text-decoration:none;">+91 7700xxxxxx</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <hr style="border:none;height:1px;background-color:rgba(255,255,255,0.4);margin:30px auto;width:90%;">
+
+  <!-- COPYRIGHT -->
+  <div style="text-align:center;font-size:0.9em;opacity:0.9;">
+    © 2025 NN Softwave Technology | All Rights Reserved
+  </div>
+
 </footer>
 
-<!-- Mobile layout fix -->
+
+<!-- RESPONSIVE JS -->
 <script>
 function adjustResponsive(){
   var hero=document.getElementById('hero');
-  if(window.innerWidth<=768){hero.style.flexDirection='column';}
-  else{hero.style.flexDirection='row';}
+  var nav=document.getElementById('nav-links');
+  var menu=document.getElementById('menu-btn');
+
+  if(window.innerWidth<=768){
+    hero.style.flexDirection='column';
+    menu.style.display='block';
+    nav.style.display='none';
+    nav.style.flexDirection='column';
+    nav.style.width='100%';
+    nav.style.background='linear-gradient(90deg,#0b63cf,#2fa4ff)';
+    nav.style.textAlign='center';
+    nav.style.padding='10px 0';
+  } else {
+    hero.style.flexDirection='row';
+    menu.style.display='none';
+    nav.style.display='flex';
+  }
 }
+
+function toggleMenu(){
+  var nav=document.getElementById('nav-links');
+  if(nav.style.display==='none' || nav.style.display===''){nav.style.display='flex';}
+  else{nav.style.display='none';}
+}
+
 window.addEventListener('load',adjustResponsive);
 window.addEventListener('resize',adjustResponsive);
 </script>
 
 </body>
 </html>
-
